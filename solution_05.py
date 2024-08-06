@@ -1,8 +1,3 @@
-"""
-CSE 331 SS24
-
-"""
-
 import heapq
 import itertools
 import math
@@ -28,7 +23,6 @@ class Vertex:
 
     def __init__(self, id_init: str, x: float = 0, y: float = 0) -> None:
         """
-        DO NOT MODIFY
         Initializes a Vertex
         :param id_init: A unique string identifier used for hashing the vertex
         :param x: The x coordinate of this vertex (used in a_star)
@@ -41,7 +35,6 @@ class Vertex:
 
     def __eq__(self, other: Vertex) -> bool:
         """
-        DO NOT MODIFY.
         Equality operator for Graph Vertex class.
         :param other: [Vertex] vertex to compare.
         :return: [bool] True if vertices are equal, else False.
@@ -71,7 +64,6 @@ class Vertex:
 
     def __repr__(self) -> str:
         """
-        DO NOT MODIFY
         Constructs string representation of Vertex object.
         :return: [str] string representation of Vertex object.
         """
@@ -82,13 +74,11 @@ class Vertex:
 
     def __hash__(self) -> int:
         """
-        DO NOT MODIFY
         Hashes Vertex into a set; used in unit tests
         :return: hash value of Vertex
         """
         return hash(self.id)
 
-    # ============== Project 9 Vertex Methods Below ==============#
     def deg(self) -> int:
         """
         Returns the degree (number of outgoing edges from) of this Vertex.
@@ -127,7 +117,6 @@ class Graph:
 
     def __init__(self, plt_show: bool = False, matrix: Matrix = None, csvf: str = "") -> None:
         """
-        DO NOT MODIFY
         Instantiates a Graph class instance
         :param: plt_show : if true, render plot when plot() is called; else, ignore calls to plot()
         :param: matrix : optional matrix parameter used for fast construction
@@ -151,7 +140,6 @@ class Graph:
 
     def __eq__(self, other: Graph) -> bool:
         """
-        DO NOT MODIFY
         Overloads equality operator for Graph class
         :param other: graph to compare
         """
@@ -177,7 +165,6 @@ class Graph:
 
     def __repr__(self) -> str:
         """
-        DO NOT MODIFY
         :return: String representation of graph for debugging
         """
         return f"Size: {self.size}, Vertices: {list(self.vertices.items())}"
@@ -186,7 +173,6 @@ class Graph:
 
     def plot(self) -> None:
         """
-        DO NOT MODIFY
         Creates a plot a visual representation of the graph using matplotlib
         """
 
@@ -304,7 +290,6 @@ class Graph:
         with open(filepath, 'w+') as graph_csv:
             csv.writer(graph_csv, delimiter=',').writerows(self.graph2matrix())
 
-    # ============== Graph Methods from Project 9 ==============#
 
     def unvisit_vertices(self) -> None:
         """
@@ -363,7 +348,6 @@ class Graph:
             dist += self.get_edge_by_ids(path[-1], path[-2])[2]
         return list(reversed(path)), dist
 
-    # ============== Modify Graph Methods Below ==============#
     def bfs(self, begin_id: str, end_id: str) -> Tuple[List[str], float]:
         """
         Performs a Breadth-First Search to find the shortest path from a start vertex to an end vertex.
@@ -570,7 +554,6 @@ class PriorityQueue:
 class TollWayPriorityQueue:
     """
     Priority Queue built upon heapq module with support for priority key updates
-    Created by Tanawan Premsri
     Inspired by AStarPriorityQueue
     """
 

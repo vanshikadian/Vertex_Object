@@ -15,7 +15,7 @@ The project provides an implementation of:
 Clone this repository to your local machine:
 
 ```bash
-git clone 
+git clone https://github.com/vanshikadian/Vertex_Object.git
 ```
 
 ## Usage
